@@ -57,6 +57,20 @@ def main():
 
         # TODO: Create your consent form and a variable called consent_given
 
+        print("Please read the consent form below and confirm your agreement.")
+        print('\033[1m' +"Consent Agreement" + '\033[0m' )
+        string_with_bullets = ("\u2022 I Understand the purpose of this usability study."
+                               "\n\u2022 I am aware that my data will be collected solely for research and improvement purposes"
+                               "\n\u2022 I can withdraw at any time.")
+        print(string_with_bullets)
+        # for checkbox
+
+        root = tk.Tk()
+        checkbox_value = tk.IntVar()
+        checkbox = ttk.Checkbutton(root, text = 'I agree to the terms above.', variable= checkbox_value)
+        checkbox.pack(anchor = tk.W, padx = 10, pady = 5)
+        root.mainloop()
+
         if st.button("Submit Consent"):
             if not consent_given:
                 st.warning("You must agree to the consent terms before proceeding.")
