@@ -110,6 +110,14 @@ def main():
         selected_task = st.selectbox("Select Task", ["Task 1: Example Task"])
         st.write("Task Description: Perform the example task in our system...")
 
+        # Timer Sessions Initialization
+        if "start_button" not in st.session_state:
+            st.session_state/start_time = None
+        if "elapsed_time" not in st.session_state:
+            st.session_state.elapsed_time = 0
+        if "running" not in st. session_state:
+            st.session_state.running = False
+
         # Track success, completion time, etc.
         start_button = st.button("Start Task Timer")
         if start_button:
