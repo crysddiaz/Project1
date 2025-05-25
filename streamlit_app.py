@@ -224,7 +224,7 @@ def main():
 
         #Satisfaction chart
         if not exit_df.empty:
-            st.header("Satisfaction Distribution")
+            st.write("**Satisfaction Distribution**")
             chart_satisfaction = alt.Chart(exit_df).mark_bar().encode(
                 x=alt.X("satisfaction:O", title="Satisfaction Rating"),
                 y=alt.Y("count():Q", title="Number of Users"),
