@@ -85,6 +85,11 @@ def main():
 
         with st.form("demographic_form"):
             #TODO: Create the demographic form
+            name = st. text_input("Name")
+            age = st.number_input("Age", min_value= 0, max_value = 120, step = 1)
+            occupation = st. text_input("Occupation")
+            familiarity = st.selectbox("Familiarity with similar tools?", ["Not at all","Somewhat familiar
+, "Very familiar"))
             submitted = st.form_submit_button("Submit Demographics")
             if submitted:
                 data_dict = {
