@@ -172,8 +172,8 @@ def main():
         with st.form("exit_form"):
             # TODO: likert scale or other way to have an exit questionnaire
 
-            satisfaction = st.slider("Overall Satisfaction 1 = Very low, 5 = Very High", 1,2,3,4,5)
-            difficultu = st.slider("Overall Difficulty 1 = Very Easy, 5 = Very Hard", 1,2,3,4,5)
+            satisfaction = st.slider("Overall Satisfaction 1 = Very low, 5 = Very High", 1,5,3)
+            difficultu = st.slider("Overall Difficulty 1 = Very Easy, 5 = Very Hard", 1,5,3)
 
             submitted_exit = st.form_submit_button("Submit Exit Questionnaire")
             if submitted_exit:
