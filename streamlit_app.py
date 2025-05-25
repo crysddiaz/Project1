@@ -100,6 +100,7 @@ def main():
                     "familiarity": familiarity
                 }
                 save_to_csv(data_dict, DEMOGRAPHIC_CSV)
+                st.success
 
     with tasks:
         st.header("Task Page")
