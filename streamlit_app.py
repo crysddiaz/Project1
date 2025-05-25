@@ -112,10 +112,10 @@ def main():
 
         # Timer Sessions Initialization
         if "task_duration" not in st.session_state:
-            st.session_state.taskduration = None
+            st.session_state.task_duration = None
             
         if "start_button" not in st.session_state:
-            st.session_state.start_time = None
+            st.session_state.start_button = None
         
         if "running" not in st. session_state:
             st.session_state.running = False
@@ -126,16 +126,21 @@ def main():
             st.info("Task timer started. Complete your vtask and then click 'Stop Task Timer.'")
         else:
             elapsed = st.session_state.get("task_duration" , 0)
+
+   
             
         # Track success, completion time, etc.
         start_button = st.button("Start Task Timer")
         if start_button:
             st.session_state["start_time"] = time.time()
+            st.session_state["running'] = True
 
         stop_button = st.button("Stop Task Timer")
         if stop_button and "start_time" in st.session_state:
             duration = time.time() - st.session_state["start_time"]
             st.session_state["task_duration"] = duration
+            st.session_state["running"] = False
+            st.success(f"Task completed in {st.session_state.task_duration:.2f}" seconds)
 
         success = st.radio("Was the task completed successfully?", ["Yes", "No", "Partial"])
         notes = st.text_area("Observer Notes")
