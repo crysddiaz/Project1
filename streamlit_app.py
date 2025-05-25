@@ -79,6 +79,7 @@ def main():
                     "consent_given": consent_given
                 }
                 save_to_csv(data_dict, CONSENT_CSV)
+                st.success
 
     with demographics:
         st.header("Demographic Questionnaire")
