@@ -79,7 +79,7 @@ def main():
                     "consent_given": consent_given
                 }
                 save_to_csv(data_dict, CONSENT_CSV)
-                st.success
+                st.success("Your consent has been recorded. Thank You!")
 
     with demographics:
         st.header("Demographic Questionnaire")
@@ -101,7 +101,7 @@ def main():
                     "familiarity": familiarity
                 }
                 save_to_csv(data_dict, DEMOGRAPHIC_CSV)
-                st.success
+                st.success("Demographic data saved.
 
     with tasks:
         st.header("Task Page")
