@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 import os
+import altair as alt
 
 # Create a folder called data in the main project folder
 DATA_FOLDER = "data"
@@ -220,6 +221,16 @@ def main():
             st.dataframe(exit_df)
         else:
             st.info("No exit questionnaire data available yet.")
+
+        #Satisfaction chart
+        if not exit_df.empty:
+            st.subheader("Satisfaction Distribution")
+            chart_satisfaction = alt.Chart(exit_df).mark_bar().encode(
+                x=alt.X("satisfaction:O", title="Satisfaction Rating"),
+                y=alt.Y("count():Q", title="Number of Users"),
+                tooltip=["count()"]
+        ).properties(width=400)
+        st.altair_chart(chart_satisfaction)
 
         # Example of aggregated stats (for demonstration only)
         if not exit_df.empty:
