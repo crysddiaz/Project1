@@ -112,7 +112,7 @@ def main():
 
         # Timer Sessions Initialization
         if "start_button" not in st.session_state:
-            st.session_state/start_time = None
+            st.session_state.start_time = None
         if "elapsed_time" not in st.session_state:
             st.session_state.elapsed_time = 0
         if "running" not in st. session_state:
