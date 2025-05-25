@@ -123,7 +123,7 @@ def main():
         # Message for timer
         if st.session_state.running:
             elapsed = time.time() - st.session_state.start_time
-            st.info("Task timer started. Complete your vtask and then click 'Stop Task Timer.'")
+            st.info("Task timer started. Complete your task and then click 'Stop Task Timer.'")
         else:
             elapsed = st.session_state.get("task_duration" , 0)
 
