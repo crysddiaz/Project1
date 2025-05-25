@@ -148,7 +148,7 @@ def main():
 
         if st.button("Save Task Results"):
             duration_val = st.session_state.get("task_duration", None)
-            st.info("Task data saved.")
+            st.sucess("Task data saved.")
 
             data_dict = {
                 "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
