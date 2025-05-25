@@ -140,7 +140,7 @@ def main():
             duration = time.time() - st.session_state["start_time"]
             st.session_state["task_duration"] = duration
             st.session_state["running"] = False
-            st.success(f"Task completed in {st.session_state.task_duration:.2f}" seconds)
+            st.success(f"Task completed in {st.session_state.task_duration:.2f} seconds")
 
         success = st.radio("Was the task completed successfully?", ["Yes", "No", "Partial"])
         notes = st.text_area("Observer Notes")
