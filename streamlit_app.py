@@ -117,7 +117,10 @@ def main():
             st.session_state.elapsed_time = 0
         if "running" not in st. session_state:
             st.session_state.running = False
-
+        # Message for timer
+        if st. session_state.running:
+            st.session_state.elapsed_time = time.time90 = st. session_state.start_time
+            st.info("Task timer started. Complete your vtask and then click 'Stop Task Timer.'")
         # Track success, completion time, etc.
         start_button = st.button("Start Task Timer")
         if start_button:
