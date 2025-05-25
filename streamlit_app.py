@@ -133,7 +133,7 @@ def main():
         start_button = st.button("Start Task Timer")
         if start_button:
             st.session_state["start_time"] = time.time()
-            st.session_state["running'] = True
+            st.session_state["running"] = True
 
         stop_button = st.button("Stop Task Timer")
         if stop_button and "start_time" in st.session_state:
