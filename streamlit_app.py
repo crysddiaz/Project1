@@ -111,15 +111,17 @@ def main():
         st.write("Task Description: Perform the example task in our system...")
 
         # Timer Sessions Initialization
-        if "start_button" not in st.session_state:
-            st.session_state.start_time = None
         if "task_duration" not in st.session_state:
             st.session_state.taskduration = None
+            
+        if "start_button" not in st.session_state:
+            st.session_state.start_time = None
+        
         if "running" not in st. session_state:
             st.session_state.running = False
             
         # Message for timer
-        if st. session_state.running:
+        if st.session_state.running:
             elapsed = time.time() - st.session_state.start_time
             st.info("Task timer started. Complete your vtask and then click 'Stop Task Timer.'")
         else:
